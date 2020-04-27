@@ -1,8 +1,14 @@
 """
-NOTE : If you are viewing this .py file first in this repository, I would recommend you to go through 'twitter_sentiment_analysis.py' file
-as the code there is well commented with all explanations and it would be easy to understand the few basics needed for this project.
+NOTE #1 : If you are viewing this .py file first in this repository, I would recommend you to go through 'twitter_sentiment_analysis.py' file
+          as the sourcecode there is well commented with all explanations and it would be easy to understand the few basics needed for 
+          this project. This file is just a structured and much neater version of the same file.
 
-This file is just a structured and much neater version of the same file.
+NOTE #2 : Execute the following command from a Python interactive session to download the resources before executing this file :
+          >> nltk.download('twitter_samples')
+          >> nltk.download('punkt')
+          >> nltk.download('wordnet')
+          >> nltk.download('averaged_perceptron_tagger')
+          >> nltk.download('stopwords')
 """
 
 # Importing the relevant libraries
