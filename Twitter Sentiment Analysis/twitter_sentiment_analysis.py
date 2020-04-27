@@ -133,6 +133,7 @@ positive_dataset = [(tweet_dict, "Positive")
 negative_dataset = [(tweet_dict, "Negative")
                      for tweet_dict in negative_tokens_for_model]
 
+# data in dataset list is stored as tuples
 dataset = positive_dataset + negative_dataset
 
 random.shuffle(dataset)
@@ -155,7 +156,9 @@ print(classifier.show_most_informative_features(10))
 
 # Lets analyse the sentiment of a custom_tweet
 from nltk.tokenize import word_tokenize
-custom_tweet = "I think Machine Learning is kinda coool..."
+#custom_tweet = "I think Machine Learning is kind of cool..."
+custom_tweet = "I ordered just once from TerribleCo, they screwed up, never used the app again."
+#custom_tweet = "Congrats #SportStar on your 7th best goal from last season winning goal of the year :) #Baller #Topbin #oneofmanyworldies"
 custom_tweet_token = word_tokenize(custom_tweet)
 nltk.download('stopwords')
 stop_words = stopwords.words('english')
@@ -163,4 +166,5 @@ stop_words = stopwords.words('english')
 cleaned_custom_tokens = remove_noise(custom_tweet_token, stop_words)
 print(cleaned_custom_tokens)
 
-get_tweets_for_model(cleaned_custom_tokens)
+result = classifier.classify(dict([token, True] for token in cleaned_custom_tokens))
+print("Sentiment of custom tweet : ", result)
